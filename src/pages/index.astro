@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import {
+  conference,
+  speakersPlaceholder,
+  importantDates,
+  registrationNotes,
+} from '../lib/ic2ins-data.js';
+
+const title = `${conference.shortName} | ${conference.theme}`;
+const description =
+  'IC2INS-2026 is an international conference on computational intelligence, AI, smart networks, IoT, blockchain, cyber-physical systems, and sustainable digital infrastructure.';
+const canonicalUrl = new URL('/', Astro.site).toString();
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: conference.shortName,
+    alternateName: conference.name,
+    url: canonicalUrl,
+    description,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Event',
+    name: conference.name,
+    alternateName: conference.shortName,
+    description,
+    startDate: '2026-12-03',
+    endDate: '2026-12-04',
+    eventStatus: 'https://schema.org/EventScheduled',
+    eventAttendanceMode: 'https://schema.org/MixedEventAttendanceMode',
+    url: canonicalUrl,
+    image: [new URL('/site/images/header.png', Astro.site).toString()],
+    organizer: {
+      '@type': 'Organization',
+      name: 'IC2INS-2026 Organizing Committee',
+      url: canonicalUrl,
+    },
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonicalUrl}
+  structuredData={structuredData}
+>
+  <div id="content" class="col-full business">
+    <div id="main-sidebar-container">
+      <h1 class="visually-hidden">
+        1st International Conference on Computational Intelligence and Networked Systems
+        (IC2INS-2026)
+      </h1>
+      <div class="hero-carousel" aria-label="Conference highlights">
+        <div class="hero-slide is-active">
+          <img
+            src="/site/images/h1.jpg"
+            alt="IC2INS-2026 computational intelligence and networked systems conference"
+          />
+        </div>
+        <div class="hero-slide">
+          <img src="/site/images/h2.jpg" alt="Call for papers for IC2INS-2026" />
+        </div>
+        <div class="hero-slide">
+          <img src="/site/images/h3.jpg" alt="IC2INS-2026 conference dates and venue update" />
+        </div>
+        <button class="carousel-control prev" type="button" aria-label="Previous slide"> ‹ </button>
+        <button class="carousel-control next" type="button" aria-label="Next slide"> › </button>
+      </div>
+
+      <section id="main">
+        <article class="post-2 page type-page status-publish hentry">
+          <section class="entry">
+            <div class="content-block">
+              <h2>Welcome</h2>
+              {conference.about.map((paragraph) => <p align="justify">{paragraph}</p>)}
+            </div>
+            <div class="content-block">
+              <h2>Speakers</h2>
+              <p align="justify">{speakersPlaceholder}</p>
+            </div>
+          </section>
+          <div class="fix"></div>
+        </article>
+      </section>
+
+      <aside id="sidebar" class="ic2ins-sidebar">
+        <div class="sidebar-card">
+          <h3>Important Dates</h3>
+          <ul>
+            {
+              importantDates.map((row) => (
+                <li>
+                  <strong>{row.task}:</strong> {row.date}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <h3>Registration Notes</h3>
+          <ul>
+            {registrationNotes.map((note) => <li>{note}</li>)}
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  const carousel = document.querySelector('.hero-carousel');
+  if (carousel) {
+    const slides = Array.from(carousel.querySelectorAll('.hero-slide'));
+    const prevButton = carousel.querySelector('.carousel-control.prev');
+    const nextButton = carousel.querySelector('.carousel-control.next');
+    let currentIndex = 0;
+    let timerId;
+
+    const setActive = (index) => {
+      slides.forEach((slide, idx) => {
+        slide.classList.toggle('is-active', idx === index);
+      });
+      currentIndex = index;
+    };
+
+    const showNext = () => {
+      const nextIndex = (currentIndex + 1) % slides.length;
+      setActive(nextIndex);
+    };
+
+    const showPrev = () => {
+      const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+      setActive(prevIndex);
+    };
+
+    const restartTimer = () => {
+      window.clearInterval(timerId);
+      timerId = window.setInterval(showNext, 5000);
+    };
+
+    prevButton?.addEventListener('click', () => {
+      showPrev();
+      restartTimer();
+    });
+
+    nextButton?.addEventListener('click', () => {
+      showNext();
+      restartTimer();
+    });
+
+    restartTimer();
+  }
+</script>

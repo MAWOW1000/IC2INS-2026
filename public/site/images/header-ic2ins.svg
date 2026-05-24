@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="320" viewBox="0 0 1400 320" role="img" aria-label="IC2INS-2026 header">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220" />
+      <stop offset="55%" stop-color="#0f2a3b" />
+      <stop offset="100%" stop-color="#123548" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2bd4c2" />
+      <stop offset="100%" stop-color="#f6c454" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0.72" cy="0.25" r="0.6">
+      <stop offset="0%" stop-color="#2bd4c2" stop-opacity="0.35" />
+      <stop offset="65%" stop-color="#2bd4c2" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="dot" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#2a4458" opacity="0.55" />
+    </pattern>
+  </defs>
+
+  <rect width="1400" height="320" fill="url(#bg)" />
+  <rect width="1400" height="320" fill="url(#glow)" />
+  <rect width="1400" height="320" fill="url(#dot)" opacity="0.35" />
+
+  <g opacity="0.9">
+    <path d="M 0 230 C 200 140, 420 130, 660 175 S 1080 270, 1400 200" fill="none" stroke="url(#accent)" stroke-width="6" />
+    <path d="M 0 265 C 220 210, 460 210, 700 235 S 1100 300, 1400 245" fill="none" stroke="#7fe5d9" stroke-width="2" opacity="0.7" />
+  </g>
+
+  <g transform="translate(90 78)">
+    <rect x="0" y="0" width="98" height="98" rx="20" fill="#123e4f" />
+    <path d="M 22 62 L 46 38 L 64 56 L 86 30" fill="none" stroke="#f6c454" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+    <circle cx="46" cy="38" r="5" fill="#f6c454" />
+    <circle cx="64" cy="56" r="5" fill="#f6c454" />
+    <circle cx="86" cy="30" r="5" fill="#f6c454" />
+  </g>
+
+  <g transform="translate(220 74)">
+    <text x="0" y="0" fill="#ffffff" font-size="46" font-family="Georgia, 'Times New Roman', Times, serif" font-weight="700">
+      IC2INS-2026
+    </text>
+    <text x="0" y="46" fill="#d6e6f3" font-size="21" font-family="Georgia, 'Times New Roman', Times, serif">
+      The 1st International Conference on Computational Intelligence and Networked Systems
+    </text>
+    <rect x="0" y="70" width="610" height="5" fill="url(#accent)" />
+    <text x="0" y="106" fill="#b8d3e6" font-size="17" font-family="Georgia, 'Times New Roman', Times, serif">
+      Intelligent Systems and Smart Networks for a Sustainable Digital Future
+    </text>
+  </g>
+</svg>

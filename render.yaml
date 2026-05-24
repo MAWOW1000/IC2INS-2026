@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: ic2ins-2026
+    runtime: static
+    repo: https://github.com/MAWOW1000/IC2INS-2026.git
+    branch: main
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist
+    autoDeployTrigger: commit

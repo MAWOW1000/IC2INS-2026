@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  conference,
+  importantDates,
+  registrationFees,
+  registrationNotes,
+  cameraReadySubmission,
+  registrationProcess,
+} from '../../lib/ic2ins-data.js';
+
+const title = `Author Info | ${conference.shortName}`;
+const description =
+  'Important IC2INS-2026 author dates, registration fees, camera ready submission instructions, and manuscript formatting requirements.';
+const refundNote = 'Registration fee once submitted cannot be refunded.';
+const registrationListNotes = registrationNotes.filter((note) => note !== refundNote);
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={new URL('/author-info', Astro.site).toString()}
+>
+  <div id="content" class="col-full business">
+    <div id="main-sidebar-container">
+      <section id="main" style="width: 98%;">
+        <article class="post-2 page type-page status-publish hentry">
+          <section class="entry">
+            <div class="woo-sc-hr" style="border-bottom: 6px solid #efefef; width: 100%;">
+              <h2>Author Information</h2>
+            </div>
+
+            <h2>Important Dates</h2>
+            <table border="1" width="100%">
+              <thead>
+                <tr>
+                  <th align="left">Task</th>
+                  <th align="left">Important Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  importantDates.map((row) => (
+                    <tr>
+                      <td>{row.task}</td>
+                      <td>{row.date}</td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+
+            <h2>Registration Amount</h2>
+            <table border="1" width="100%">
+              <thead>
+                <tr>
+                  <th align="left">Category</th>
+                  <th align="left">For Indian Authors and Delegates (INR)</th>
+                  <th align="left">For Foreign Authors and Delegates (USD)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  registrationFees.map((row) => (
+                    <tr>
+                      <td>{row.category}</td>
+                      <td>{row.inr}</td>
+                      <td>{row.usd}</td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+            <ul>
+              {registrationListNotes.map((note) => <li>{note}</li>)}
+            </ul>
+            <p class="author-note">
+              <strong>NOTE:</strong> Registration fee once submitted, it cannot be refunded.
+            </p>
+
+            <h2>Camera Ready Submission</h2>
+            <p align="justify">{cameraReadySubmission.intro}</p>
+            <h3>General instructions:</h3>
+            <ul>
+              {
+                cameraReadySubmission.generalInstructions.map((item) => (
+                  <li>
+                    {typeof item === 'string' ? (
+                      item
+                    ) : (
+                      <>
+                        {item.text}{' '}
+                        {item.links.map((link) => (
+                          <>
+                            (<a href={link.href}>{link.label}</a>){' '}
+                          </>
+                        ))}
+                      </>
+                    )}
+                  </li>
+                ))
+              }
+            </ul>
+
+            <h2>REGISTRATION PROCESS</h2>
+            <p align="justify">{registrationProcess}</p>
+          </section>
+          <div class="fix"></div>
+        </article>
+      </section>
+    </div>
+  </div>
+</BaseLayout>

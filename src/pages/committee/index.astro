@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  conference,
+  organizingCommittee,
+  technicalProgramCommittee,
+  advisoryCommittee,
+} from '../../lib/ic2ins-data.js';
+
+const title = `Committee | ${conference.shortName}`;
+const description =
+  'Meet the IC2INS-2026 organizing committee, technical program committee, and advisory committee for computational intelligence and networked systems research.';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={new URL('/committee', Astro.site).toString()}
+>
+  <div id="content" class="col-full business">
+    <div id="main-sidebar-container">
+      <section id="main" style="width: 98%;">
+        <article class="post-2 page type-page status-publish hentry">
+          <section class="entry">
+            <div class="woo-sc-hr" style="border-bottom: 6px solid #efefef; width: 100%;">
+              <h2>Committee</h2>
+            </div>
+
+            <h2>Organizing Committee</h2>
+            {
+              organizingCommittee.map((group) => (
+                <section>
+                  <h3>{group.role}</h3>
+                  <ul>
+                    {group.members.map((member) => (
+                      <li>{member}</li>
+                    ))}
+                  </ul>
+                </section>
+              ))
+            }
+
+            <h2>Technical Program Committee</h2>
+            <ul>
+              {technicalProgramCommittee.map((member) => <li>{member}</li>)}
+            </ul>
+
+            <h2>Advisory Committee</h2>
+            <ul>
+              {advisoryCommittee.map((member) => <li>{member}</li>)}
+            </ul>
+          </section>
+          <div class="fix"></div>
+        </article>
+      </section>
+    </div>
+  </div>
+</BaseLayout>
