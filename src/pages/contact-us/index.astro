@@ -5,6 +5,7 @@ import { conference, contactInfo } from '../../lib/ic2ins-data.js';
 const title = `Contact Us | ${conference.shortName}`;
 const description =
   'Contact the IC2INS-2026 organizing team for conference enquiries, author support, registration questions, and submission information.';
+const contactMailHref = `mailto:${contactInfo.email}`;
 ---
 
 <BaseLayout
@@ -21,7 +22,7 @@ const description =
               <h2>Contact Us</h2>
             </div>
             <p><strong>Contact Person:</strong> {contactInfo.name}</p>
-            <p><strong>Email:</strong> {contactInfo.email}</p>
+            <p><strong>Email:</strong> <a href={contactMailHref}>{contactInfo.email}</a></p>
             <p><strong>Phone:</strong> {contactInfo.phone}</p>
           </section>
           <div class="fix"></div>

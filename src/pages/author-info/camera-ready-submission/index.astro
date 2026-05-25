@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { conference, cameraReadySubmission } from '../../../lib/ic2ins-data.js';
+
+const title = `Camera Ready Submission | ${conference.shortName}`;
+const description =
+  'IC2INS-2026 camera ready submission instructions and CRC manuscript formatting requirements.';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={new URL('/author-info/camera-ready-submission', Astro.site).toString()}
+>
+  <div id="content" class="col-full business">
+    <div id="main-sidebar-container">
+      <section id="main" style="width: 98%;">
+        <article class="post-2 page type-page status-publish hentry">
+          <section class="entry">
+            <div class="woo-sc-hr" style="border-bottom: 6px solid #efefef; width: 100%;">
+              <h2>Camera Ready Submission</h2>
+            </div>
+            <p align="justify"><strong>{cameraReadySubmission.intro}</strong></p>
+            <h3>General instructions:</h3>
+            <ul>
+              {
+                cameraReadySubmission.generalInstructions.map((item) => (
+                  <li>
+                    {typeof item === 'string' ? (
+                      item
+                    ) : (
+                      <>
+                        {item.text}{' '}
+                        {item.links.map((link) => (
+                          <>
+                            (<a href={link.href}>{link.label}</a>){' '}
+                          </>
+                        ))}
+                      </>
+                    )}
+                  </li>
+                ))
+              }
+            </ul>
+          </section>
+          <div class="fix"></div>
+        </article>
+      </section>
+    </div>
+  </div>
+</BaseLayout>

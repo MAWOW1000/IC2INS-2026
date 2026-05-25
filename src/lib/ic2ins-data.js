@@ -404,6 +404,6 @@ export const cmtAcknowledgement =
 
 export const contactInfo = {
   name: 'Dr. Hema Gupta',
-  email: 'to-be-added',
+  email: 'iciit@cbees.net',
   phone: 'to-be-added',
 };

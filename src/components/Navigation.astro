@@ -1,7 +1,9 @@
 ---
 import { navItems } from '../lib/navigation.js';
+import { contactInfo } from '../lib/ic2ins-data.js';
 
 const currentPath = Astro.url.pathname;
+const contactMailHref = `mailto:${contactInfo.email}`;
 
 function isActive(href) {
   return currentPath === href || (href !== '/' && currentPath.startsWith(href));
@@ -14,37 +16,145 @@ function isActive(href) {
     <h3>Main Menu</h3>
     <ul id="main-nav" class="nav fl">
       {
-        navItems.map((item) => (
-          <li
-            class:list={[
-              'menu-item',
-              'menu-item-type-custom',
-              'menu-item-object-custom',
-              item.children && 'menu-item-has-children',
-              isActive(item.href) && 'current-menu-item current_page_item',
-            ]}
-          >
-            <a href={item.href}>{item.label}</a>
-            {item.children && (
-              <ul class="sub-menu">
-                {item.children.map((child) => (
-                  <li
-                    class:list={[
-                      'menu-item',
-                      'menu-item-type-custom',
-                      'menu-item-object-custom',
-                      isActive(child.href) && 'current-menu-item current_page_item',
-                    ]}
+        navItems.map((item, itemIndex) => {
+          const submenuId = `submenu-${itemIndex}`;
+
+          return (
+            <li
+              class:list={[
+                'menu-item',
+                'menu-item-type-custom',
+                'menu-item-object-custom',
+                item.children && 'menu-item-has-children',
+                isActive(item.href) && 'current-menu-item current_page_item',
+              ]}
+            >
+              <div class="nav-item-control">
+                <a
+                  href={item.href}
+                  aria-haspopup={item.children ? 'true' : undefined}
+                  aria-controls={item.children ? submenuId : undefined}
+                >
+                  {item.label}
+                </a>
+                {item.children && (
+                  <button
+                    class="submenu-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls={submenuId}
+                    aria-label={`Toggle ${item.label} submenu`}
                   >
-                    <a href={child.href}>{child.label}</a>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))
+                    <span aria-hidden="true" />
+                  </button>
+                )}
+              </div>
+              {item.children && (
+                <ul id={submenuId} class="sub-menu">
+                  {item.children.map((child) => (
+                    <li
+                      class:list={[
+                        'menu-item',
+                        'menu-item-type-custom',
+                        'menu-item-object-custom',
+                        isActive(child.href) && 'current-menu-item current_page_item',
+                      ]}
+                    >
+                      <a href={child.href}>{child.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          );
+        })
       }
     </ul>
+    <div class="side-nav">
+      <a class="nav-mail-link" href={contactMailHref} aria-label="Email IC2INS-2026">
+        <span>Contact by email</span>
+      </a>
+    </div>
   </section>
   <a href="#top" class="nav-close"><span>Return to Content</span></a>
 </nav>
+
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navToggleLink = navToggle?.querySelector('a');
+  const navClose = document.querySelector('.nav-close');
+  const pageBody = document.body;
+  const desktopQuery = window.matchMedia('(min-width: 768px)');
+  const navItemsWithChildren = Array.from(
+    document.querySelectorAll('#main-nav > .menu-item-has-children'),
+  );
+
+  const setMainMenuOpen = (isOpen) => {
+    pageBody.classList.toggle('show-nav', isOpen);
+    navToggleLink?.setAttribute('aria-expanded', String(isOpen));
+  };
+
+  const closeSubmenu = (item) => {
+    const toggle = item.querySelector('.submenu-toggle');
+    if (!toggle) return;
+    item.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  };
+
+  const closeOtherSubmenus = (activeItem) => {
+    navItemsWithChildren.forEach((item) => {
+      if (item !== activeItem) closeSubmenu(item);
+    });
+  };
+
+  navToggle?.addEventListener('click', (event) => {
+    event.preventDefault();
+    setMainMenuOpen(!pageBody.classList.contains('show-nav'));
+  });
+
+  navClose?.addEventListener('click', (event) => {
+    event.preventDefault();
+    setMainMenuOpen(false);
+  });
+
+  document.querySelector('#main-nav')?.addEventListener('click', (event) => {
+    if (event.target instanceof HTMLAnchorElement && !desktopQuery.matches) {
+      setMainMenuOpen(false);
+    }
+  });
+
+  navItemsWithChildren.forEach((item) => {
+    const toggle = item.querySelector('.submenu-toggle');
+    if (!toggle) return;
+
+    toggle.addEventListener('click', () => {
+      const isOpen = item.classList.contains('is-open');
+      closeOtherSubmenus(item);
+      item.classList.toggle('is-open', !isOpen);
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+
+  document.addEventListener('click', (event) => {
+    if (
+      event.target instanceof Node &&
+      pageBody.classList.contains('show-nav') &&
+      !document.querySelector('#navigation')?.contains(event.target) &&
+      !navToggle?.contains(event.target)
+    ) {
+      setMainMenuOpen(false);
+    }
+
+    if (
+      event.target instanceof Node &&
+      !document.querySelector('#navigation')?.contains(event.target)
+    ) {
+      navItemsWithChildren.forEach(closeSubmenu);
+    }
+  });
+
+  desktopQuery.addEventListener('change', () => {
+    setMainMenuOpen(false);
+    navItemsWithChildren.forEach(closeSubmenu);
+  });
+</script>

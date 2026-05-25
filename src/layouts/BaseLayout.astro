@@ -57,7 +57,9 @@ const structuredDataJson = structuredData
   >
     <div id="wrapper">
       <div id="inner-wrapper">
-        <h3 class="nav-toggle icon"><a href="#navigation">Navigation</a></h3>
+        <h3 class="nav-toggle icon">
+          <a href="#navigation" aria-controls="navigation" aria-expanded="false">Navigation</a>
+        </h3>
         <Header />
         <Navigation />
         <slot />

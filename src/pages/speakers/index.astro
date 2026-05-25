@@ -1,16 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { conference, registrationProcess } from '../../lib/ic2ins-data.js';
+import { conference, speakersPlaceholder } from '../../lib/ic2ins-data.js';
 
-const title = `Author Info | ${conference.shortName}`;
+const title = `Speakers | ${conference.shortName}`;
 const description =
-  'Important IC2INS-2026 author dates, registration fees, camera ready submission instructions, and manuscript formatting requirements.';
+  'IC2INS-2026 speaker announcements, keynote speakers, and invited speaker updates.';
 ---
 
 <BaseLayout
   title={title}
   description={description}
-  canonical={new URL('/author-info', Astro.site).toString()}
+  canonical={new URL('/speakers', Astro.site).toString()}
 >
   <div id="content" class="col-full business">
     <div id="main-sidebar-container">
@@ -18,11 +18,9 @@ const description =
         <article class="post-2 page type-page status-publish hentry">
           <section class="entry">
             <div class="woo-sc-hr" style="border-bottom: 6px solid #efefef; width: 100%;">
-              <h2>Author Information</h2>
+              <h2>Speakers</h2>
             </div>
-
-            <h2>eREGISTRATION PROCESS</h2>
-            <p align="justify">{registrationProcess}</p>
+            <p align="justify">{speakersPlaceholder}</p>
           </section>
           <div class="fix"></div>
         </article>

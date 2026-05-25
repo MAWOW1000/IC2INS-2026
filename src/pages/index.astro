@@ -1,11 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import {
-  conference,
-  speakersPlaceholder,
-  importantDates,
-  registrationNotes,
-} from '../lib/ic2ins-data.js';
+import { conference, importantDates, registrationNotes } from '../lib/ic2ins-data.js';
 
 const title = `${conference.shortName} | ${conference.theme}`;
 const description =
@@ -73,13 +68,9 @@ const structuredData = [
       <section id="main">
         <article class="post-2 page type-page status-publish hentry">
           <section class="entry">
-            <div class="content-block">
-              <h2>Welcome</h2>
+            <div id="about-conference" class="content-block">
+              <h2>About Conference</h2>
               {conference.about.map((paragraph) => <p align="justify">{paragraph}</p>)}
-            </div>
-            <div class="content-block">
-              <h2>Speakers</h2>
-              <p align="justify">{speakersPlaceholder}</p>
             </div>
           </section>
           <div class="fix"></div>

@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { conference, submissionGuidelines } from '../../../lib/ic2ins-data.js';
+
+const title = `Submission Guidelines | ${conference.shortName}`;
+const description = 'IC2INS-2026 submission guidelines and manuscript preparation requirements.';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={new URL('/call-for-papers/submission-guidelines', Astro.site).toString()}
+>
+  <div id="content" class="col-full business">
+    <div id="main-sidebar-container">
+      <section id="main" style="width: 98%;">
+        <article class="post-2 page type-page status-publish hentry">
+          <section class="entry">
+            <div class="woo-sc-hr" style="border-bottom: 6px solid #efefef; width: 100%;">
+              <h2>Submission Guidelines</h2>
+            </div>
+            <p align="justify">
+              Please review the key submission requirements below. For camera ready details and
+              registration information, visit the <a href="/author-info">Author Info</a> page.
+            </p>
+            <ul>
+              {submissionGuidelines.map((item) => <li>{item}</li>)}
+            </ul>
+          </section>
+          <div class="fix"></div>
+        </article>
+      </section>
+    </div>
+  </div>
+</BaseLayout>

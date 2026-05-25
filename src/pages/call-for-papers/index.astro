@@ -1,11 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import {
-  conference,
-  callForPapersIntro,
-  tracks,
-  submissionGuidelines,
-} from '../../lib/ic2ins-data.js';
+import { conference, callForPapersIntro } from '../../lib/ic2ins-data.js';
 
 const title = `Call for Papers | ${conference.shortName}`;
 const description =
@@ -31,29 +26,6 @@ const [introBeforeHighlight, introAfterHighlight = ''] =
                 {introBeforeHighlight}<strong>{highlightedPhrase}</strong>{introAfterHighlight}
               </p>
             </div>
-
-            <h2>Track Details</h2>
-            {
-              tracks.map((track) => (
-                <section>
-                  <h3>{track.title}</h3>
-                  <ul>
-                    {track.topics.map((topic) => (
-                      <li>{topic}</li>
-                    ))}
-                  </ul>
-                </section>
-              ))
-            }
-
-            <h2>Submission Guidelines</h2>
-            <p align="justify">
-              Please review the key submission requirements below. For camera ready details and
-              registration information, visit the <a href="/author-info">Author Info</a> page.
-            </p>
-            <ul>
-              {submissionGuidelines.map((item) => <li>{item}</li>)}
-            </ul>
           </section>
           <div class="fix"></div>
         </article>
