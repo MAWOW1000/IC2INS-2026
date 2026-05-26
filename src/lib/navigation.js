@@ -10,7 +10,7 @@ export const navItems = [
   },
   {
     label: 'Author Info',
-    href: '/author-info',
+    href: '/author-info/important-dates',
     children: [
       { label: 'Important Dates', href: '/author-info/important-dates' },
       { label: 'Registration Amount', href: '/author-info/registration-amount' },
@@ -19,7 +19,7 @@ export const navItems = [
   },
   {
     label: 'Committee',
-    href: '/committee',
+    href: '/committee/organizing-committee',
     children: [
       { label: 'Organizing Committee', href: '/committee/organizing-committee' },
       { label: 'Technical Program Committee', href: '/committee/technical-program-committee' },

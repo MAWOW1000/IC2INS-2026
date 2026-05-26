@@ -286,6 +286,14 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
+  html,
+  body,
+  #wrapper,
+  #inner-wrapper {
+    min-height: 100%;
+    overflow-x: hidden;
+  }
+
   #wrapper,
   .col-full,
   #content,
@@ -300,6 +308,18 @@ body {
   #main,
   #sidebar {
     box-sizing: border-box;
+  }
+
+  #inner-wrapper,
+  .show-nav #inner-wrapper,
+  .csstransforms3d.csstransitions .show-nav #inner-wrapper,
+  .csstransforms3d.csstransitions body.fixed-mobile .show-nav #inner-wrapper {
+    left: 0 !important;
+    transform: none !important;
+  }
+
+  body.show-nav {
+    overflow: hidden;
   }
 
   #main-sidebar-container {
@@ -328,9 +348,27 @@ body {
     border-width: 0 1px 0 0;
     background: #f0f0f0;
     box-shadow: none;
-    max-height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    width: min(80vw, 320px) !important;
+    max-width: calc(100vw - 48px) !important;
+    height: 100vh;
+    max-height: 100dvh;
     overflow-y: auto;
+    overflow-x: hidden;
+    transform: none !important;
+    -webkit-overflow-scrolling: touch;
     padding-bottom: 24px;
+  }
+
+  .show-nav #navigation,
+  .csstransforms3d.csstransitions .show-nav #navigation,
+  .csstransforms3d.csstransitions body.fixed-mobile .show-nav #navigation {
+    display: block;
+    transform: none !important;
   }
 
   #inner-wrapper,
