@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "astro dev --host 127.0.0.1",
     "build": "astro build",
-    "postbuild": "npm run clean:source-html",
     "preview": "astro preview --host 127.0.0.1",
     "extract": "node scripts/extract-pages.mjs",
     "clean:source-html": "node scripts/remove-source-html.mjs",

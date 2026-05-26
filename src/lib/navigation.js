@@ -2,7 +2,7 @@ export const navItems = [
   { label: 'HOME', href: '/' },
   {
     label: 'Call For Papers',
-    href: '/call-for-papers',
+    href: '/call-for-papers/track-details',
     children: [
       { label: 'Track Details', href: '/call-for-papers/track-details' },
       { label: 'Submission Guidelines', href: '/call-for-papers/submission-guidelines' },

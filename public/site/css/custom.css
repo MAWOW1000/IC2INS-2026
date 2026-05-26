@@ -13,6 +13,44 @@ from style.css to this file, and modify it to your liking. */
 ----------------
 Add styles beneath this line that you want to be applied across your entire site */
 
+@media only screen and (max-width: 767px) {
+  #navigation,
+  #navigation * {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  #navigation ul.nav li a,
+  #navigation ul.nav li a:link,
+  #navigation ul.nav li a:visited,
+  #navigation ul.nav li a:hover,
+  #navigation ul.nav li a:focus,
+  #navigation ul.nav li a:active,
+  #navigation ul.nav li.current_page_item a,
+  #navigation ul.nav li.current_page_parent a,
+  #navigation ul.nav li.current-menu-ancestor a,
+  #navigation ul.nav li.current-cat a,
+  #navigation ul.nav li.current-menu-item a,
+  #navigation ul.nav ul li.current_page_item a,
+  #navigation ul.nav ul li.current_page_parent a,
+  #navigation ul.nav ul li.current-menu-ancestor a,
+  #navigation ul.nav ul li.current-cat a,
+  #navigation ul.nav ul li.current-menu-item a,
+  body.fixed-mobile #navigation ul.nav li a:hover,
+  body.fixed-mobile #navigation ul.nav > li > ul li a:hover {
+    box-sizing: border-box !important;
+    display: block !important;
+    background: transparent !important;
+    color: #555555 !important;
+    text-decoration: none !important;
+    transition: none !important;
+  }
+
+  #navigation ul.nav ul {
+    background: transparent !important;
+  }
+}
+
 
 
 

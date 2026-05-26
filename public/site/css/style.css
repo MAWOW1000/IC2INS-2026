@@ -3581,13 +3581,13 @@ ul.nav ul li.current-menu-item a,
         margin-left: 0; }
 
   #navigation ul.nav > li a:hover {
-    background: #e6e6e6; }
+    background: #eef4ff; }
 
   #navigation ul.nav > li:hover {
-    background: #e6e6e6; }
+    background: #eef4ff; }
 
   #navigation ul.nav ul {
-    background: #e6e6e6; }
+    background: #eef4ff; }
 
   #navigation ul.nav > li:hover > ul {
     left: -1px; }
