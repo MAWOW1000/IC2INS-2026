@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { conference, speakersPlaceholder } from '../../lib/ic2ins-data.js';
+import { conference, speakers } from '../../lib/ic2ins-data.js';
 
 const title = `Speakers | ${conference.shortName}`;
 const description =
@@ -20,7 +20,65 @@ const description =
             <div class="woo-sc-hr" style="border-bottom: 6px solid #efefef; width: 100%;">
               <h2>Speakers</h2>
             </div>
-            <p align="justify">{speakersPlaceholder}</p>
+            <div class="speaker-list">
+              {
+                speakers.map((speaker) => (
+                  <article class="speaker-profile">
+                    <img src={speaker.photo} alt={speaker.name} width="200" height="200" />
+                    <div class="speaker-profile__content">
+                      <p class="speaker-profile__role">{speaker.role}</p>
+                      <h3>{speaker.name}</h3>
+                      <p class="speaker-profile__appointment">
+                        <strong>{speaker.title}</strong>, {speaker.affiliation}
+                      </p>
+                      {speaker.summary.map((paragraph) => (
+                        <p>{paragraph}</p>
+                      ))}
+
+                      {speaker.signature && <p class="speaker-signature">{speaker.signature}</p>}
+
+                      <div class="speaker-detail-grid">
+                        <section>
+                          <h4>Education</h4>
+                          <p>{speaker.education}</p>
+                        </section>
+
+                        <section>
+                          <h4>Institutional Experience</h4>
+                          <ul>
+                            {speaker.institutionalExperience.map((item) => (
+                              <li>{item}</li>
+                            ))}
+                          </ul>
+                        </section>
+
+                        <section>
+                          <h4>Research and Professional Contributions</h4>
+                          <ul>
+                            {speaker.contributions.map((item) => (
+                              <li>{item}</li>
+                            ))}
+                          </ul>
+                        </section>
+                      </div>
+
+                      <div class="speaker-tags" aria-label="Primary subject areas">
+                        {speaker.subjectTags.map((tag) => (
+                          <span>{tag}</span>
+                        ))}
+                      </div>
+
+                      <p class="speaker-profile-note">
+                        {speaker.profileNote}{' '}
+                        <a href={speaker.profileUrl} target="_blank" rel="noopener noreferrer">
+                          PeerJ profile
+                        </a>
+                      </p>
+                    </div>
+                  </article>
+                ))
+              }
+            </div>
           </section>
           <div class="fix"></div>
         </article>

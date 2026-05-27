@@ -4,13 +4,50 @@ export const conference = {
   theme: 'Intelligent Systems and Smart Networks for a Sustainable Digital Future',
   about: [
     'The 1st International Conference on Computational Intelligence and Networked Systems (IC2INS-2026) is themed around "Intelligent Systems and Smart Networks for a Sustainable Digital Future." The conference will cover a wide range of interdisciplinary research areas, including but not limited to artificial intelligence, deep learning, natural language processing, computer vision, medical imaging, wireless sensor networks, 5G/6G technologies, Internet of Things (IoT), cyber-physical systems, blockchain, smart cities, big data analytics, and cloud-edge-fog computing. The objective is to provide a platform for researchers, academicians, and industry professionals to share innovative solutions, theoretical advances, and practical applications that align with the global shift toward intelligent, connected, and sustainable systems.',
-    'The thematic areas of the conference are mapped to multiple technical domains of IEEE, particularly the IEEE Computational Intelligence Society, IEEE Communications Society, IEEE Computer Society, IEEE Signal Processing Society, IEEE Robotics and Automation Society, and the IEEE Smart Cities Initiative, among others. These alignments ensure that the conference remains relevant to contemporary research challenges and is well-positioned for technical sponsorship and scholarly contribution.',
-    "The organizing committee will invite eminent researchers and domain experts as track chairs and session leads to maintain academic rigor and ensure peer-reviewed quality across submissions. Faculty members from reputed institutions with significant research backgrounds in AI, networking, and intelligent systems will be nominated as chairs, ensuring the conference is led by credible experts in alignment with IEEE's academic and professional standards.",
+    'The conference is expected to be published by CRC Press (Approval Pending).',
   ],
 };
 
-export const speakersPlaceholder =
-  'Speaker announcements will be published soon. Please check back for keynote and invited speaker updates.';
+export const speakers = [
+  {
+    name: 'Dr. Anand Paul',
+    role: 'Invited Speaker',
+    photo: '/site/images/speaker/Anand Paul.jpeg',
+    title: 'Associate Professor',
+    affiliation:
+      'Department of Biostatistics and Data Science, School of Public Health, Louisiana State University Health Sciences Center, New Orleans, USA',
+    summary: [
+      'Dr. Anand Paul is an Associate Professor in the Department of Biostatistics and Data Science, School of Public Health, Louisiana State University Health Sciences Center, New Orleans, USA. His academic profile spans artificial intelligence, data science, mathematical modeling of machine learning, and resilient intelligent computing systems.',
+      'He previously held academic appointments with Kyungpook National University and Hanyang University in South Korea, contributing to research and teaching in computer science, electronics engineering, and intelligent computing.',
+    ],
+    signature:
+      'Professional focus: resilient and evolving intelligence for data-driven, adaptive, and trustworthy digital systems.',
+    education:
+      'Ph.D. in Electrical and Computer Engineering, National Cheng Kung University, Taiwan, R.O.C. (2010)',
+    institutionalExperience: [
+      'Associate Professor, Louisiana State University Health Sciences Center, Department of Biostatistics and Data Science',
+      'Professor, Kyungpook National University, School of Computer Science and Engineering',
+      'Assistant Professor, Hanyang University, Electronics Engineering',
+      'Assistant Professor and Associate Professor, Kyungpook National University, School of Computer Science and Engineering',
+    ],
+    contributions: [
+      'Research interests include artificial intelligence, mathematical modeling of machine learning, and applied machine learning.',
+      'Delegate representing South Korea for the M2M focus group and MPEG from 2004 to 2010.',
+      'Chair for ACM SAC from 2014 to 2019.',
+      'Editorial contributions include Computer Animation and Virtual Worlds, Data Science in Science, IET WSS, ICT Express, Cyber-Physical Systems (Taylor & Francis), and ACM Applied Computing Review.',
+    ],
+    subjectTags: [
+      'Artificial Intelligence',
+      'Data Science',
+      'Machine Learning',
+      'Mathematical Modeling',
+      'Resilient Computing',
+    ],
+    profileNote:
+      'For the full profile, publication activity, and editorial record, please visit his PeerJ profile.',
+    profileUrl: 'https://peerj.com/anandpaul/',
+  },
+];
 
 export const callForPapersIntro =
   'Authors are invited to contribute to the conference by submitting original research articles that illustrate novel findings, significant projects, comprehensive surveys, or industrial experiences in the fields of Computational Intelligence and Networked Systems (IC2INS-2026). Submissions should highlight advancements, challenges, and opportunities within these domains.';
@@ -169,11 +206,13 @@ export const organizingCommittee = [
   },
   {
     role: 'Publicity Chair',
-    members: ['Dr. Naved'],
+    members: [
+      'Dr. Mohd Naved, Associate Professor (Business Analytics), Jaipuria Institute of Management, Noida, India.',
+    ],
   },
   {
     role: 'Technical Program Chair',
-    members: ['Dr. Ajanta'],
+    members: ['Dr. Ajantha Devi, AP3 Solutions, India.'],
   },
 ];
 
@@ -403,7 +442,7 @@ export const cmtAcknowledgement =
   'The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.';
 
 export const contactInfo = {
-  name: 'Dr. Hema Gupta',
-  email: 'iciit@cbees.net',
-  phone: 'to-be-added',
+  name: 'Dr. Meenu Gupta',
+  email: 'ic2insconference@gmail.com',
+  phone: '+91 94163 45948',
 };
