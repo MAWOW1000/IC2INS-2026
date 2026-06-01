@@ -1,11 +1,20 @@
 ---
-
+import { conference } from '../lib/ic2ins-data.js';
 ---
 
-<header id="header" class="col-full">
-  <div id="logo">
-    <a href="/" title="IC2INS-2026">
-      <img src="/site/images/header.jpg" alt="IC2INS-2026" />
-    </a>
-  </div>
+<header id="header" class="col-full site-header">
+  <a class="conference-banner" href="/" title={conference.shortName}>
+    <div class="conference-banner__copy">
+      <div class="conference-brand" aria-label={conference.shortName}>
+        <span>WC</span><strong>2IR</strong>
+      </div>
+      <p class="conference-banner__kicker">World Conference on</p>
+      <p class="conference-banner__title">Computational Intelligence and Robotics</p>
+      <div class="conference-banner__meta">
+        <p><strong>Conference Date:</strong> {conference.dates}</p>
+        <p><strong>Venue:</strong> {conference.venue}</p>
+      </div>
+    </div>
+    <div class="conference-banner__visual" aria-hidden="true"></div>
+  </a>
 </header>

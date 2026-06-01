@@ -3,8 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { conference, contactInfo } from '../../lib/ic2ins-data.js';
 
 const title = `Contact Us | ${conference.shortName}`;
-const description =
-  'Contact the IC2INS-2026 organizing team for conference enquiries, author support, registration questions, and submission information.';
+const description = `Contact the ${conference.shortName} organizing team for conference enquiries, author support, registration questions, and submission information.`;
 const contactMailHref = `mailto:${contactInfo.email}`;
 ---
 

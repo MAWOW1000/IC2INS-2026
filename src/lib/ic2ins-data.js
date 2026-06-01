@@ -1,9 +1,11 @@
 export const conference = {
-  name: '1st International Conference on Computational Intelligence and Networked Systems (IC2INS-2026)',
-  shortName: 'IC2INS-2026',
-  theme: 'Intelligent Systems and Smart Networks for a Sustainable Digital Future',
+  name: 'World Conference on Computational Intelligence and Robotics (WC2IR)',
+  shortName: 'WC2IR-2026',
+  theme: 'Computational Intelligence and Robotics for Intelligent Autonomous Systems',
+  venue: 'Da Nang Pedro Hotel, Da Nang, Viet Nam',
+  dates: '17-18 December 2026',
   about: [
-    'The 1st International Conference on Computational Intelligence and Networked Systems (IC2INS-2026) is themed around "Intelligent Systems and Smart Networks for a Sustainable Digital Future." The conference will cover a wide range of interdisciplinary research areas, including but not limited to artificial intelligence, deep learning, natural language processing, computer vision, medical imaging, wireless sensor networks, 5G/6G technologies, Internet of Things (IoT), cyber-physical systems, blockchain, smart cities, big data analytics, and cloud-edge-fog computing. The objective is to provide a platform for researchers, academicians, and industry professionals to share innovative solutions, theoretical advances, and practical applications that align with the global shift toward intelligent, connected, and sustainable systems.',
+    'The World Conference on Computational Intelligence and Robotics (WC2IR) will be held on 17-18 December 2026 at Da Nang Pedro Hotel, Da Nang, Viet Nam. The conference brings together researchers, academicians, and industry professionals working across computational intelligence, artificial intelligence, robotics, autonomous systems, intelligent perception, automation, IoT, and emerging smart technologies.',
     'The conference is expected to be published by CRC Press (Approval Pending).',
   ],
 };
@@ -16,96 +18,90 @@ export const speakers = [
     title: 'Associate Professor',
     affiliation:
       'Department of Biostatistics and Data Science, School of Public Health, Louisiana State University Health Sciences Center, New Orleans, USA',
-    summary: [
-      'Dr. Anand Paul is an Associate Professor in the Department of Biostatistics and Data Science, School of Public Health, Louisiana State University Health Sciences Center, New Orleans, USA. His academic profile spans artificial intelligence, data science, mathematical modeling of machine learning, and resilient intelligent computing systems.',
-      'He previously held academic appointments with Kyungpook National University and Hanyang University in South Korea, contributing to research and teaching in computer science, electronics engineering, and intelligent computing.',
-    ],
-    signature:
-      'Professional focus: resilient and evolving intelligence for data-driven, adaptive, and trustworthy digital systems.',
-    education:
-      'Ph.D. in Electrical and Computer Engineering, National Cheng Kung University, Taiwan, R.O.C. (2010)',
-    institutionalExperience: [
-      'Associate Professor, Louisiana State University Health Sciences Center, Department of Biostatistics and Data Science',
-      'Professor, Kyungpook National University, School of Computer Science and Engineering',
-      'Assistant Professor, Hanyang University, Electronics Engineering',
-      'Assistant Professor and Associate Professor, Kyungpook National University, School of Computer Science and Engineering',
-    ],
-    contributions: [
-      'Research interests include artificial intelligence, mathematical modeling of machine learning, and applied machine learning.',
-      'Delegate representing South Korea for the M2M focus group and MPEG from 2004 to 2010.',
-      'Chair for ACM SAC from 2014 to 2019.',
-      'Editorial contributions include Computer Animation and Virtual Worlds, Data Science in Science, IET WSS, ICT Express, Cyber-Physical Systems (Taylor & Francis), and ACM Applied Computing Review.',
-    ],
-    subjectTags: [
-      'Artificial Intelligence',
-      'Data Science',
-      'Machine Learning',
-      'Mathematical Modeling',
-      'Resilient Computing',
-    ],
-    profileNote:
-      'For the full profile, publication activity, and editorial record, please visit his PeerJ profile.',
-    profileUrl: 'https://peerj.com/anandpaul/',
+  },
+  {
+    name: 'Prof. (Dr.) Ahmed J. Obaid',
+    role: 'Invited Speaker',
+    photo: '/site/images/speaker/ahmed-j-obaid.png',
+    title: 'Faculty of Computer Science and Mathematics',
+    affiliation: 'University of Kufa, Najaf, Iraq',
+  },
+  {
+    name: 'Mr. Monu Sharma',
+    role: 'Invited Speaker',
+    photo: '/site/images/speaker/monu-sharma.png',
+    title: 'Senior IT Solutions Architect',
+    affiliation: 'Valley Health System, Winchester, VA, USA',
+  },
+  {
+    name: 'Prof. (Dr.) Nikola Ivković',
+    role: 'Invited Speaker',
+    photo: '/site/images/speaker/nikola-ivkovic.png',
+    title: 'Associate Professor',
+    affiliation:
+      'University of Zagreb, Faculty of Organization and Informatics, Department of Computing and Technology, University of Zagreb, Croatia',
   },
 ];
 
 export const callForPapersIntro =
-  'Authors are invited to contribute to the conference by submitting original research articles that illustrate novel findings, significant projects, comprehensive surveys, or industrial experiences in the fields of Computational Intelligence and Networked Systems (IC2INS-2026). Submissions should highlight advancements, challenges, and opportunities within these domains.';
+  'Authors are invited to contribute to the conference by submitting original research articles that illustrate novel findings, significant projects, comprehensive surveys, or industrial experiences in the fields of computational intelligence, artificial intelligence, robotics, autonomous systems, intelligent perception, automation, IoT, and emerging smart technologies. Submissions should highlight advancements, challenges, and opportunities within these domains.';
 
 export const tracks = [
   {
-    title: 'Track 1: Artificial Intelligence (AI)',
+    title: 'Track 1: Computational Intelligence and Artificial Intelligence',
     topics: [
-      'Neural Networks',
-      'Deep Learning',
-      'Natural Language Processing',
-      'Expert Systems',
+      'Artificial Intelligence and Intelligent Systems',
+      'Machine Learning and Deep Learning',
+      'Neural Networks and Cognitive Computing',
+      'Evolutionary Computing and Swarm Intelligence',
+      'Fuzzy Systems and Soft Computing',
       'Reinforcement Learning',
-      'Fuzzy Logic and Evolutionary Computation',
-      'Sentiment Analysis',
-      'AI in Healthcare and Diagnostics',
-      'Multi-agent Systems',
+      'Natural Language Processing',
+      'Knowledge Representation and Expert Systems',
+      'AI Applications in Healthcare, Finance, Education, and Industry',
     ],
   },
   {
-    title: 'Track 2: Advanced Networked Systems and Communication Technologies',
+    title: 'Track 2: Robotics and Autonomous Systems',
     topics: [
-      'Wireless Sensor Networks and 5G/6G Technologies',
-      'Internet of Things (IoT) and Industrial IoT',
-      'Network Security, Blockchain, and Cryptography',
-      'Software-Defined Networking (SDN) and Network Function Virtualization (NFV)',
-      'Edge, Fog, and Cloud Networking Architectures',
-      'Communication Protocols and Standards',
-      'Vehicular Ad-hoc Networks (VANETs)',
-      'Satellite and Optical Communication',
-      'Network Modeling and Simulation',
+      'Intelligent Robotics',
+      'Autonomous Mobile Robots',
+      'Industrial and Collaborative Robots (Cobots)',
+      'Humanoid and Service Robots',
+      'Human-Robot Interaction',
+      'Robot Navigation and Path Planning',
+      'Multi-Robot and Swarm Robotics',
+      'Autonomous Vehicles and Unmanned Systems',
+      'Robot Perception and Sensor Integration',
+      'Robotics Applications in Healthcare, Agriculture, and Manufacturing',
     ],
   },
   {
-    title: 'Track 3: Machine Vision and Smart Perception',
+    title: 'Track 3: Computer Vision, Intelligent Perception, and Automation',
     topics: [
-      'Computer Vision',
+      'Computer Vision and Pattern Recognition',
       'Image and Video Processing',
       'Medical Imaging and Diagnostics',
-      'Remote Sensing and GIS',
-      'Brain-Computer Interfaces',
-      'Gesture and Emotion Recognition',
-      'Object Detection and Scene Understanding',
-      'Autonomous Surveillance Systems',
+      'Object Detection and Tracking',
+      'Gesture, Activity, and Emotion Recognition',
+      'Sensor Fusion and Intelligent Perception',
+      'Intelligent Control Systems',
+      'Cyber-Physical Systems',
+      'Digital Twins',
     ],
   },
   {
-    title: 'Track 4: Emerging Trends in Computer Technologies',
+    title: 'Track 4: Smart Systems, IoT, and Emerging Technologies',
     topics: [
-      'Big Data and Data Analytics',
-      'Cyber-Physical Systems',
-      'Smart Cities and Digital Infrastructure',
-      'Machine-to-Machine Communication',
-      'Blockchain and Distributed Ledger Technologies',
-      'Internet of Everything (IoE)',
-      'Mobile and Cloud Applications',
-      'Green and Sustainable Computing',
-      'Social and Web Computing',
+      'Internet of Things (IoT) and Industrial IoT',
+      'Smart Cities and Intelligent Infrastructure',
+      'Intelligent Transportation Systems',
+      'Edge, Fog, and Cloud Computing',
+      'Wireless Sensor Networks and Connected Systems',
+      'Big Data Analytics and Data Science',
+      'Blockchain and Secure Intelligent Systems',
+      'Quantum Computing and Quantum Machine Learning',
+      'Sustainable and Green Intelligent Technologies',
     ],
   },
 ];
@@ -116,7 +112,7 @@ export const importantDates = [
   { task: 'Decision Notification', date: '10 Nov 2026' },
   { task: 'Camera Ready Submission', date: '20 Nov 2026' },
   { task: 'Registration', date: '20 Nov 2026' },
-  { task: 'Conference Date', date: '3-4 Dec 2026' },
+  { task: 'Conference Date', date: '17-18 December 2026' },
 ];
 
 export const registrationFees = [
@@ -155,6 +151,8 @@ export const submissionGuidelines = [
   'Format the paper using the CRC standard template (Word or LaTeX).',
   'The paper length should not exceed six (6) pages.',
 ];
+
+export const submissionUrl = 'https://cmt3.research.microsoft.com/ic2ins2026';
 
 export const cameraReadySubmission = {
   intro:
@@ -196,6 +194,7 @@ export const organizingCommittee = [
     members: [
       'Prof. (Dr.) Meenu Gupta, Head Conferences and Research Outreach, Chandigarh University, Punjab, India',
       'Prof. (Dr.) Anand Nayyar, Professor, Scientist, Vice-Chairman (Research) and Director (IoT and Intelligent Systems Lab), SCA, Duy Tan University, Da Nang, Vietnam',
+      'Dr. Rakesh Kumar, Associate Director, Chandigarh University, Punjab, India',
     ],
   },
   {
@@ -217,6 +216,9 @@ export const organizingCommittee = [
 ];
 
 export const technicalProgramCommittee = [
+  'Dr. Rachna Jain, Bhagwan Parshuram Institute of Technology',
+  "Dr. Shakeel Ahmed, Taylor's University, Malaysia",
+  'Dr. Muneer Ahmad, Department of Computer Science, University of Roehampton, London SW15 5PH',
   'Prof. Smain Femmam, Strasbourg University of Haute Alsace, France',
   'Prof. Malleswara Talla, Concordia University, Canada',
   'Dr. Dang Ngoc Hoang Thanh, University of Economics Ho Chi Minh City, Vietnam',
@@ -444,5 +446,5 @@ export const cmtAcknowledgement =
 export const contactInfo = {
   name: 'Dr. Meenu Gupta',
   email: 'ic2insconference@gmail.com',
-  phone: '+91 94163 45948',
+  phone: '+91 8708951544',
 };

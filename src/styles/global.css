@@ -1,14 +1,101 @@
-#logo img {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
+.site-header {
+  background: #071824;
 }
 
-#logo,
-#logo a {
-  display: block;
-  width: 100%;
+.conference-banner {
+  display: grid;
+  grid-template-columns: minmax(720px, 70%) minmax(0, 1fr);
+  min-height: 220px;
+  overflow: hidden;
+  background: #071824;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.conference-banner:hover,
+.conference-banner:focus {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.conference-banner__copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 24px 32px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 24, 36, 1) 0%,
+      rgba(7, 24, 36, 1) 82%,
+      rgba(7, 24, 36, 0.98) 93%,
+      rgba(7, 24, 36, 0) 100%
+    ),
+    radial-gradient(circle at 10% 20%, rgba(24, 174, 234, 0.22), transparent 28%);
+}
+
+.conference-brand {
+  margin-bottom: 6px;
+  color: #17b3ec;
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.conference-brand strong {
+  color: #ff9f0a;
+}
+
+.conference-banner__kicker {
+  margin: 0 0 4px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.conference-banner__title {
+  margin: 0;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.18;
+}
+
+.conference-banner__meta {
+  display: grid;
+  gap: 4px;
+  margin-top: 14px;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.conference-banner__meta p {
+  margin: 0;
+}
+
+.conference-banner__meta strong {
+  color: #ffb31a;
+}
+
+.conference-banner__visual {
+  margin-left: -240px;
+  min-width: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 24, 36, 1) 0%,
+      rgba(7, 24, 36, 0.94) 26%,
+      rgba(7, 24, 36, 0.58) 48%,
+      rgba(7, 24, 36, 0) 72%
+    ),
+    url('/site/images/wc2ir-banner-ai.jpg') center right / cover no-repeat;
 }
 
 body {
@@ -178,6 +265,12 @@ body {
   height: auto;
 }
 
+#main .entry {
+  box-sizing: border-box;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
 .hero-carousel {
   position: relative;
   width: 100%;
@@ -264,6 +357,10 @@ body {
 
 .speaker-profile:last-child {
   border-bottom: none;
+}
+
+.speaker-profile--text {
+  grid-template-columns: 1fr;
 }
 
 .speaker-profile img {
@@ -383,6 +480,41 @@ body {
   color: #0b3f82;
 }
 
+.submission-action {
+  margin: 22px 0 8px;
+}
+
+.submit-paper-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 46px;
+  box-sizing: border-box;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 0;
+  background: #f28c00;
+  color: #ffffff !important;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 0 rgba(124, 68, 0, 0.35);
+}
+
+.submit-paper-button:hover,
+.submit-paper-button:focus {
+  background: #d97800;
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+.submit-paper-button span {
+  font-size: 20px;
+  line-height: 1;
+}
+
 @media only screen and (max-width: 767px) {
   html,
   body,
@@ -429,6 +561,36 @@ body {
     width: 100% !important;
     display: block;
     overflow-x: auto;
+  }
+
+  .conference-banner {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .conference-banner__copy {
+    padding: 20px 18px;
+  }
+
+  .conference-brand {
+    font-size: 34px;
+  }
+
+  .conference-banner__kicker {
+    font-size: 17px;
+  }
+
+  .conference-banner__title {
+    font-size: 23px;
+  }
+
+  .conference-banner__meta {
+    font-size: 14px;
+  }
+
+  .conference-banner__visual {
+    min-height: 110px;
+    background-position: center right;
   }
 
   .hero-carousel {

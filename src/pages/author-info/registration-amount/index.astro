@@ -3,8 +3,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { conference, registrationFees, registrationNotes } from '../../../lib/ic2ins-data.js';
 
 const title = `Registration Amount | ${conference.shortName}`;
-const description =
-  'IC2INS-2026 registration amount for authors, delegates, industry participants, and attendees.';
+const description = `${conference.shortName} registration amount for authors, delegates, industry participants, and attendees.`;
 const refundNote = 'Registration fee once submitted cannot be refunded.';
 const registrationListNotes = registrationNotes.filter((note) => note !== refundNote);
 ---

@@ -4,7 +4,7 @@ import { conference, importantDates } from '../lib/ic2ins-data.js';
 
 const title = `${conference.shortName} | ${conference.theme}`;
 const description =
-  'IC2INS-2026 is an international conference on computational intelligence, AI, smart networks, IoT, blockchain, cyber-physical systems, and sustainable digital infrastructure.';
+  'WC2IR-2026 is a world conference on computational intelligence, artificial intelligence, robotics, autonomous systems, intelligent perception, automation, IoT, and emerging smart technologies.';
 const canonicalUrl = new URL('/', Astro.site).toString();
 const structuredData = [
   {
@@ -21,16 +21,21 @@ const structuredData = [
     name: conference.name,
     alternateName: conference.shortName,
     description,
-    startDate: '2026-12-03',
-    endDate: '2026-12-04',
+    startDate: '2026-12-17',
+    endDate: '2026-12-18',
     eventStatus: 'https://schema.org/EventScheduled',
     eventAttendanceMode: 'https://schema.org/MixedEventAttendanceMode',
     url: canonicalUrl,
-    image: [new URL('/site/images/header.jpg', Astro.site).toString()],
+    image: [new URL('/site/images/wc2ir-banner-ai.jpg', Astro.site).toString()],
     organizer: {
       '@type': 'Organization',
-      name: 'IC2INS-2026 Organizing Committee',
+      name: 'WC2IR-2026 Organizing Committee',
       url: canonicalUrl,
+    },
+    location: {
+      '@type': 'Place',
+      name: 'Da Nang Pedro Hotel',
+      address: 'Da Nang, Viet Nam',
     },
   },
 ];
@@ -45,21 +50,20 @@ const structuredData = [
   <div id="content" class="col-full business">
     <div id="main-sidebar-container">
       <h1 class="visually-hidden">
-        1st International Conference on Computational Intelligence and Networked Systems
-        (IC2INS-2026)
+        World Conference on Computational Intelligence and Robotics (WC2IR-2026)
       </h1>
       <div class="hero-carousel" aria-label="Conference highlights">
         <div class="hero-slide is-active">
           <img
             src="/site/images/h1.jpg"
-            alt="IC2INS-2026 computational intelligence and networked systems conference"
+            alt="WC2IR-2026 computational intelligence and robotics conference"
           />
         </div>
         <div class="hero-slide">
-          <img src="/site/images/h2.jpg" alt="Call for papers for IC2INS-2026" />
+          <img src="/site/images/h2.jpg" alt="Call for papers for WC2IR-2026" />
         </div>
         <div class="hero-slide">
-          <img src="/site/images/h3.jpg" alt="IC2INS-2026 conference dates and venue update" />
+          <img src="/site/images/h3.jpg" alt="WC2IR-2026 conference dates and venue update" />
         </div>
         <button class="carousel-control prev" type="button" aria-label="Previous slide"> ‹ </button>
         <button class="carousel-control next" type="button" aria-label="Next slide"> › </button>
@@ -70,6 +74,8 @@ const structuredData = [
           <section class="entry">
             <div id="about-conference" class="content-block">
               <h2>About Conference</h2>
+              <p><strong>Conference Date:</strong> {conference.dates}</p>
+              <p><strong>Venue:</strong> {conference.venue}</p>
               {conference.about.map((paragraph) => <p align="justify">{paragraph}</p>)}
             </div>
           </section>

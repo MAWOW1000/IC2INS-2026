@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { conference, submissionGuidelines } from '../../../lib/ic2ins-data.js';
+import { conference, submissionGuidelines, submissionUrl } from '../../../lib/ic2ins-data.js';
 
 const title = `Submission Guidelines | ${conference.shortName}`;
-const description = 'IC2INS-2026 submission guidelines and manuscript preparation requirements.';
+const description = `${conference.shortName} submission guidelines and manuscript preparation requirements.`;
 ---
 
 <BaseLayout
@@ -26,6 +26,16 @@ const description = 'IC2INS-2026 submission guidelines and manuscript preparatio
             <ul>
               {submissionGuidelines.map((item) => <li>{item}</li>)}
             </ul>
+            <p class="submission-action">
+              <a
+                href={submissionUrl}
+                class="submit-paper-button"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Submit Paper Online <span aria-hidden="true">&rarr;</span>
+              </a>
+            </p>
           </section>
           <div class="fix"></div>
         </article>

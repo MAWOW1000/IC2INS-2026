@@ -3,8 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { conference, speakers } from '../../lib/ic2ins-data.js';
 
 const title = `Speakers | ${conference.shortName}`;
-const description =
-  'IC2INS-2026 speaker announcements, keynote speakers, and invited speaker updates.';
+const description = `${conference.shortName} speaker announcements, keynote speakers, and invited speaker updates.`;
 ---
 
 <BaseLayout
@@ -23,57 +22,77 @@ const description =
             <div class="speaker-list">
               {
                 speakers.map((speaker) => (
-                  <article class="speaker-profile">
-                    <img src={speaker.photo} alt={speaker.name} width="200" height="200" />
+                  <article
+                    class:list={['speaker-profile', !speaker.photo && 'speaker-profile--text']}
+                  >
+                    {speaker.photo && (
+                      <img src={speaker.photo} alt={speaker.name} width="200" height="200" />
+                    )}
                     <div class="speaker-profile__content">
                       <p class="speaker-profile__role">{speaker.role}</p>
                       <h3>{speaker.name}</h3>
                       <p class="speaker-profile__appointment">
-                        <strong>{speaker.title}</strong>, {speaker.affiliation}
+                        {speaker.title && <strong>{speaker.title}</strong>}
+                        {speaker.title && speaker.affiliation && ', '}
+                        {speaker.affiliation}
                       </p>
-                      {speaker.summary.map((paragraph) => (
+                      {speaker.summary?.map((paragraph) => (
                         <p>{paragraph}</p>
                       ))}
 
                       {speaker.signature && <p class="speaker-signature">{speaker.signature}</p>}
 
-                      <div class="speaker-detail-grid">
-                        <section>
-                          <h4>Education</h4>
-                          <p>{speaker.education}</p>
-                        </section>
+                      {(speaker.education ||
+                        speaker.institutionalExperience?.length ||
+                        speaker.contributions?.length) && (
+                        <div class="speaker-detail-grid">
+                          {speaker.education && (
+                            <section>
+                              <h4>Education</h4>
+                              <p>{speaker.education}</p>
+                            </section>
+                          )}
 
-                        <section>
-                          <h4>Institutional Experience</h4>
-                          <ul>
-                            {speaker.institutionalExperience.map((item) => (
-                              <li>{item}</li>
-                            ))}
-                          </ul>
-                        </section>
+                          {speaker.institutionalExperience?.length && (
+                            <section>
+                              <h4>Institutional Experience</h4>
+                              <ul>
+                                {speaker.institutionalExperience.map((item) => (
+                                  <li>{item}</li>
+                                ))}
+                              </ul>
+                            </section>
+                          )}
 
-                        <section>
-                          <h4>Research and Professional Contributions</h4>
-                          <ul>
-                            {speaker.contributions.map((item) => (
-                              <li>{item}</li>
-                            ))}
-                          </ul>
-                        </section>
-                      </div>
+                          {speaker.contributions?.length && (
+                            <section>
+                              <h4>Research and Professional Contributions</h4>
+                              <ul>
+                                {speaker.contributions.map((item) => (
+                                  <li>{item}</li>
+                                ))}
+                              </ul>
+                            </section>
+                          )}
+                        </div>
+                      )}
 
-                      <div class="speaker-tags" aria-label="Primary subject areas">
-                        {speaker.subjectTags.map((tag) => (
-                          <span>{tag}</span>
-                        ))}
-                      </div>
+                      {speaker.subjectTags?.length && (
+                        <div class="speaker-tags" aria-label="Primary subject areas">
+                          {speaker.subjectTags.map((tag) => (
+                            <span>{tag}</span>
+                          ))}
+                        </div>
+                      )}
 
-                      <p class="speaker-profile-note">
-                        {speaker.profileNote}{' '}
-                        <a href={speaker.profileUrl} target="_blank" rel="noopener noreferrer">
-                          PeerJ profile
-                        </a>
-                      </p>
+                      {speaker.profileNote && speaker.profileUrl && (
+                        <p class="speaker-profile-note">
+                          {speaker.profileNote}{' '}
+                          <a href={speaker.profileUrl} target="_blank" rel="noopener noreferrer">
+                            PeerJ profile
+                          </a>
+                        </p>
+                      )}
                     </div>
                   </article>
                 ))

@@ -5,11 +5,11 @@ import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const {
-  title = 'IC2INS-2026 | Computational Intelligence and Networked Systems',
-  description = '1st International Conference on Computational Intelligence and Networked Systems (IC2INS-2026).',
+  title = 'WC2IR-2026 | Computational Intelligence and Robotics',
+  description = 'World Conference on Computational Intelligence and Robotics (WC2IR-2026).',
   canonical,
-  image = '/site/images/header.jpg',
-  keywords = 'IC2INS 2026, computational intelligence conference, networked systems conference, artificial intelligence conference, smart networks, IoT, blockchain, cyber physical systems',
+  image = '/site/images/wc2ir-banner-ai.jpg',
+  keywords = 'WC2IR 2026, computational intelligence conference, robotics conference, artificial intelligence conference, autonomous systems, IoT, intelligent perception, automation',
   structuredData,
 } = Astro.props;
 
@@ -28,24 +28,26 @@ const structuredDataJson = structuredData
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
-    <meta name="author" content="IC2INS-2026 Organizing Committee" />
+    <meta name="author" content="WC2IR-2026 Organizing Committee" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#1f66d1" />
     <meta name="google-site-verification" content="krSndegzjSfslMoGTbShbrf0Tuub5iS0DZ-DtIDFs-c" />
     <link rel="canonical" href={canonicalUrl} />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="IC2INS-2026" />
+    <meta property="og:site_name" content="WC2IR-2026" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={imageUrl} />
-    <meta property="og:image:alt" content="IC2INS-2026 conference website banner" />
+    <meta property="og:image:alt" content="WC2IR-2026 conference website banner" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={imageUrl} />
     {structuredDataJson && <script type="application/ld+json" set:html={structuredDataJson} />}
-    <link rel="shortcut icon" href="/site/favicon.ico" />
+    <link rel="icon" href="/site/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="/site/favicon.png" />
+    <link rel="apple-touch-icon" href="/site/favicon.png" />
     <link rel="stylesheet" href="/site/css/style.css" />
     <link rel="stylesheet" href="/site/css/colorbox.css" />
     <link rel="stylesheet" href="/site/css/font-awesome.min.css" />
