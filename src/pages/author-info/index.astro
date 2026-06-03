@@ -8,7 +8,9 @@ const redirectTo = '/author-info/important-dates';
     <meta charset="UTF-8" />
     <meta http-equiv="refresh" content={`0; url=${redirectTo}`} />
     <link rel="canonical" href={redirectTo} />
-    <script define:vars={{ redirectTo }}>window.location.replace(redirectTo);</script>
+    <script define:vars={{ redirectTo }}>
+      window.location.replace(redirectTo);
+    </script>
   </head>
   <body>
     <p><a href={redirectTo}>Continue to Important Dates</a></p>

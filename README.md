@@ -11,7 +11,6 @@ This is an Astro rebuild of the mirrored ICIIT website. It is designed for:
 
 ```bash
 npm install
-npm run extract
 npm run dev
 ```
 
@@ -41,8 +40,7 @@ src/components/Header.astro      site header
 src/components/Navigation.astro  main navigation
 src/components/Footer.astro      footer
 src/pages/                       real SEO pages
-public/site/                     copied images, CSS, PDFs, docs, and JS assets
-scripts/extract-pages.mjs        converts mirrored HTML into Astro pages
+public/site/                     required CSS, favicon files, and images
 ```
 
 ## Format Code
@@ -65,4 +63,4 @@ experience:
 
 ## Development Direction
 
-The current page bodies are generated from the mirrored HTML as a first migration step. For cleaner long-term development, convert important pages one by one from `set:html` into hand-authored Astro components and data files.
+The current page bodies are hand-authored Astro pages backed by shared data files in `src/lib`.
