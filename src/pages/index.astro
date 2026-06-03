@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { conference, importantDates } from '../lib/ic2ins-data.js';
+import { conference, importantDates, submissionUrl } from '../lib/ic2ins-data.js';
 
 const title = `${conference.shortName} | ${conference.theme}`;
 const description =
@@ -95,6 +95,16 @@ const structuredData = [
               ))
             }
           </ul>
+          <p class="submission-action sidebar-submission-action">
+            <a
+              href={submissionUrl}
+              class="submit-paper-button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Paper Submission Link <span aria-hidden="true">&rarr;</span>
+            </a>
+          </p>
         </div>
       </aside>
     </div>

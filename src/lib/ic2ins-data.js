@@ -152,7 +152,7 @@ export const submissionGuidelines = [
   'The paper length should not exceed six (6) pages.',
 ];
 
-export const submissionUrl = 'https://cmt3.research.microsoft.com/ic2ins2026';
+export const submissionUrl = 'https://cmt3.research.microsoft.com/WCCIR2026';
 
 export const cameraReadySubmission = {
   intro:

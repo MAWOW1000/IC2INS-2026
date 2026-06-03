@@ -4,17 +4,14 @@ import { conference } from '../lib/ic2ins-data.js';
 
 <header id="header" class="col-full site-header">
   <a class="conference-banner" href="/" aria-label={conference.shortName}>
-    <div class="conference-banner__copy">
-      <div class="conference-brand" aria-label={conference.shortName}>
-        <span>WC</span><strong>2IR</strong>
-      </div>
-      <p class="conference-banner__kicker">World Conference on</p>
-      <p class="conference-banner__title">Computational Intelligence and Robotics</p>
-      <div class="conference-banner__meta">
-        <p><strong>Conference Date:</strong> {conference.dates}</p>
-        <p><strong>Venue:</strong> {conference.venue}</p>
-      </div>
-    </div>
-    <div class="conference-banner__visual" aria-hidden="true"></div>
+    <picture>
+      <source media="(max-width: 767px)" srcset="/site/images/wc2ir-banner-mobile.jpg" />
+      <img
+        src="/site/images/wc2ir-banner-ai.jpg"
+        alt={`${conference.shortName}. World Conference on Computational Intelligence and Robotics. Conference Date: ${conference.dates}. Venue: ${conference.venue}.`}
+        width="1835"
+        height="430"
+      />
+    </picture>
   </a>
 </header>

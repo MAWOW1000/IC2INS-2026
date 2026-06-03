@@ -1,14 +1,13 @@
 .site-header {
-  background: #071824;
+  background: white;
 }
 
 .conference-banner {
-  display: grid;
-  grid-template-columns: minmax(720px, 70%) minmax(0, 1fr);
-  min-height: 220px;
+  display: block;
   overflow: hidden;
   background: #071824;
   color: #ffffff;
+  line-height: 0;
   text-decoration: none;
 }
 
@@ -18,84 +17,10 @@
   text-decoration: none;
 }
 
-.conference-banner__copy {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-sizing: border-box;
-  min-width: 0;
-  padding: 24px 32px;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(7, 24, 36, 1) 0%,
-      rgba(7, 24, 36, 1) 82%,
-      rgba(7, 24, 36, 0.98) 93%,
-      rgba(7, 24, 36, 0) 100%
-    ),
-    radial-gradient(circle at 10% 20%, rgba(24, 174, 234, 0.22), transparent 28%);
-}
-
-.conference-brand {
-  margin-bottom: 6px;
-  color: #17b3ec;
-  font-size: 42px;
-  font-weight: 800;
-  line-height: 0.95;
-  letter-spacing: 0;
-}
-
-.conference-brand strong {
-  color: #ff9f0a;
-}
-
-.conference-banner__kicker {
-  margin: 0 0 4px;
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.25;
-}
-
-.conference-banner__title {
-  margin: 0;
-  color: #ffffff;
-  font-size: 30px;
-  font-weight: 800;
-  line-height: 1.18;
-}
-
-.conference-banner__meta {
-  display: grid;
-  gap: 4px;
-  margin-top: 14px;
-  color: #ffffff;
-  font-size: 15px;
-  line-height: 1.35;
-}
-
-.conference-banner__meta p {
-  margin: 0;
-}
-
-.conference-banner__meta strong {
-  color: #ffb31a;
-}
-
-.conference-banner__visual {
-  margin-left: -240px;
-  min-width: 0;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(7, 24, 36, 1) 0%,
-      rgba(7, 24, 36, 0.94) 26%,
-      rgba(7, 24, 36, 0.58) 48%,
-      rgba(7, 24, 36, 0) 72%
-    ),
-    url('/site/images/wc2ir-banner-ai.jpg') center right / cover no-repeat;
+.conference-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 body {
@@ -593,7 +518,6 @@ body {
   }
 
   .site-header {
-    padding: 0 !important;
     margin: 0;
   }
 
@@ -613,46 +537,7 @@ body {
   }
 
   .conference-banner {
-    display: block;
-    min-height: 0;
     border-bottom: 4px solid #ffb31a;
-  }
-
-  .conference-banner__copy {
-    padding: 24px 18px 18px;
-    background:
-      linear-gradient(180deg, rgba(7, 24, 36, 1) 0%, rgba(7, 24, 36, 0.98) 100%),
-      radial-gradient(circle at 12% 18%, rgba(24, 174, 234, 0.2), transparent 30%);
-  }
-
-  .conference-brand {
-    margin-bottom: 8px;
-    font-size: 32px;
-  }
-
-  .conference-banner__kicker {
-    font-size: 16px;
-  }
-
-  .conference-banner__title {
-    max-width: 12.5em;
-    font-size: 22px;
-    line-height: 1.2;
-  }
-
-  .conference-banner__meta {
-    gap: 6px;
-    margin-top: 16px;
-    font-size: 14px;
-    line-height: 1.4;
-  }
-
-  .conference-banner__visual {
-    min-height: 128px;
-    margin-left: 0;
-    background:
-      linear-gradient(180deg, rgba(7, 24, 36, 0.08) 0%, rgba(7, 24, 36, 0.28) 100%),
-      url('/site/images/wc2ir-banner-ai.jpg') right bottom / cover no-repeat;
   }
 
   .hero-carousel {
